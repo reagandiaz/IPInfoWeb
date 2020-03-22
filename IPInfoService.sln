@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPInfoService", "IPInfoService\IPInfoService.csproj", "{C9ED94B1-388C-4134-A302-B7EDF6F7F728}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PingService", "MicroServices\PingService\PingService.csproj", "{C1C47247-774C-4053-8721-B778897888B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseDNSService", "MicroServices\ReverseDNSService\ReverseDNSService.csproj", "{9DD7E34D-AE14-4BD9-88D5-DBEBBF5376A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoIPService", "MicroServices\GeoIPService\GeoIPService.csproj", "{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9ED94B1-388C-4134-A302-B7EDF6F7F728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9ED94B1-388C-4134-A302-B7EDF6F7F728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9ED94B1-388C-4134-A302-B7EDF6F7F728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9ED94B1-388C-4134-A302-B7EDF6F7F728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C47247-774C-4053-8721-B778897888B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C47247-774C-4053-8721-B778897888B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C47247-774C-4053-8721-B778897888B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C47247-774C-4053-8721-B778897888B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD7E34D-AE14-4BD9-88D5-DBEBBF5376A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD7E34D-AE14-4BD9-88D5-DBEBBF5376A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD7E34D-AE14-4BD9-88D5-DBEBBF5376A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD7E34D-AE14-4BD9-88D5-DBEBBF5376A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D49C82CB-FE0D-4D58-9C98-63D727AC320B}
+	EndGlobalSection
+EndGlobal
