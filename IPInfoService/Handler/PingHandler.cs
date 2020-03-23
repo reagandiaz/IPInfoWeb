@@ -27,7 +27,7 @@ namespace IPInfoService.Handler
                 try
                 {
                     string baseUrl = "http://localhost:3333";
-                    Ping.swagger1Client swclient = new Ping.swagger1Client(baseUrl, client);
+                    Ping.PingClient swclient = new Ping.PingClient(baseUrl, client);
                     result = await swclient.WorkerAsync(ip);
                 }
                 catch (Exception ex)

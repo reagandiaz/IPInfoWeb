@@ -27,7 +27,7 @@ namespace IPInfoService.Handler
                 try
                 {
                     string baseUrl = "http://localhost:2222";
-                    GeoIP.swaggerClient swclient = new GeoIP.swaggerClient(baseUrl, client);
+                    GeoIP.GeoIPClient swclient = new GeoIP.GeoIPClient(baseUrl, client);
                     result = await swclient.WorkerAsync(ip);
                 }
                 catch (Exception ex)

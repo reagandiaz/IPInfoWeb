@@ -27,7 +27,7 @@ namespace IPInfoService.Handler
                 try
                 {
                     string baseUrl = "http://localhost:4444";
-                    ReverseDNS.swagger2Client swclient = new ReverseDNS.swagger2Client(baseUrl, client);
+                    ReverseDNS.ReverseDNSClient swclient = new ReverseDNS.ReverseDNSClient(baseUrl, client);
                     result = await swclient.WorkerAsync(ip);
                 }
                 catch (Exception ex)

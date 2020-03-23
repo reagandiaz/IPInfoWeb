@@ -19,19 +19,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <OpenApiReference Include="OpenAPIs\swagger.json" CodeGenerator="NSwagCSharp" Namespace="GeoIP" Options="GeoIP">
-      <SourceUri>http://localhost:2222/swagger/v1/swagger.json</SourceUri>
-    </OpenApiReference>
-    <OpenApiReference Include="OpenAPIs\swagger1.json" CodeGenerator="NSwagCSharp" Namespace="Ping" Options="Ping">
-      <SourceUri>http://localhost:3333/swagger/v1/swagger.json</SourceUri>
-    </OpenApiReference>
-    <OpenApiReference Include="OpenAPIs\swagger2.json" CodeGenerator="NSwagCSharp" Namespace="ReverseDNS" Options="ReverseDNS">
-      <SourceUri>http://localhost:4444/swagger/v1/swagger.json</SourceUri>
-    </OpenApiReference>
-  </ItemGroup>
-
-  <ProjectExtensions><VisualStudio><UserProperties openapis_4swagger1_1json__JsonSchema="http://json.schemastore.org/swagger-2.0" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 
 </Project>
