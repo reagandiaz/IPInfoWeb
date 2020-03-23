@@ -1,0 +1,16 @@
+{
+  "config": [
+    {
+      "host": "GeoIP",
+      "url": "http://localhost:2222"
+    },
+    {
+      "host": "Ping",
+      "url": "http://localhost:3333"
+    },
+    {
+      "host": "ReverseDNS",
+      "url": "http://localhost:4444"
+    }
+  ]
+}

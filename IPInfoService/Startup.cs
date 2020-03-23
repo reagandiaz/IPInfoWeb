@@ -4,15 +4,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using System.Collections.Generic;
 
 namespace IPInfoService
 {
     public class Startup
     {
+        public static OpenAPIs.openapiconfig OpenAPIConfig;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            OpenAPIConfig = (new ConfigTool.ConfigReader<OpenAPIs.openapiconfig>("openapiconfig.json", new OpenAPIs.openapiconfig() { config = new List<OpenAPIs.hostconfig>() })).Config;
         }
         public IConfiguration Configuration { get; }
 

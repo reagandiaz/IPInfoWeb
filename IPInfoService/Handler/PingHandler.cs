@@ -1,5 +1,6 @@
 ﻿using IPInfoService.Models;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -7,6 +8,12 @@ namespace IPInfoService.Handler
 {
     public class PingHandler : IHandler<object>
     {
+        readonly string baseUrl;
+        public PingHandler()
+        {
+            var config = Startup.OpenAPIConfig.config.SingleOrDefault(s => s.host == TaskName);
+            baseUrl = config == null ? "http://localhost:3333" : config.url;
+        }
         public string TaskName => "Ping";
         public ReportItem GenerateReport(Task task)
         {
@@ -26,7 +33,6 @@ namespace IPInfoService.Handler
             {
                 try
                 {
-                    string baseUrl = "http://localhost:3333";
                     Ping.PingClient swclient = new Ping.PingClient(baseUrl, client);
                     result = await swclient.WorkerAsync(ip);
                 }

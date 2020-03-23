@@ -1,5 +1,6 @@
 ﻿using IPInfoService.Models;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -7,6 +8,12 @@ namespace IPInfoService.Handler
 {
     public class GeoIPHandler : IHandler<object>
     {
+        readonly string baseUrl;
+        public GeoIPHandler()
+        {
+            var config = Startup.OpenAPIConfig.config.SingleOrDefault(s => s.host == TaskName);
+            baseUrl = config == null ? "http://localhost:2222" : config.url;
+        }
         public string TaskName => "GeoIP";
         public ReportItem GenerateReport(Task task)
         {
@@ -18,7 +25,6 @@ namespace IPInfoService.Handler
             reportItem.offset = tres.Ts;
             return reportItem;
         }
-
         public async Task<object> TaskToRun(string ip)
         {
             GeoIP.Result result;

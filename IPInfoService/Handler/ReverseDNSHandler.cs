@@ -1,5 +1,6 @@
 ﻿using IPInfoService.Models;
 using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -7,6 +8,12 @@ namespace IPInfoService.Handler
 {
     public class ReverseDNSHandler : IHandler<object>
     {
+        readonly string baseUrl;
+        public ReverseDNSHandler()
+        {
+            var config = Startup.OpenAPIConfig.config.SingleOrDefault(s => s.host == TaskName);
+            baseUrl = config == null ? "http://localhost:4444" : config.url;
+        }
         public string TaskName => "ReverseDNS";
         public ReportItem GenerateReport(Task task)
         {
@@ -26,7 +33,6 @@ namespace IPInfoService.Handler
             {
                 try
                 {
-                    string baseUrl = "http://localhost:4444";
                     ReverseDNS.ReverseDNSClient swclient = new ReverseDNS.ReverseDNSClient(baseUrl, client);
                     result = await swclient.WorkerAsync(ip);
                 }

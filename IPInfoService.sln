@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseDNSService", "MicroS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoIPService", "MicroServices\GeoIPService\GeoIPService.csproj", "{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigTool", "ConfigTool\ConfigTool.csproj", "{0E479DEB-2914-4113-8051-D30401D53D58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B0B8B98-7CF4-423A-8ACE-FF7B4AAEC34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E479DEB-2914-4113-8051-D30401D53D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E479DEB-2914-4113-8051-D30401D53D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E479DEB-2914-4113-8051-D30401D53D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E479DEB-2914-4113-8051-D30401D53D58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
