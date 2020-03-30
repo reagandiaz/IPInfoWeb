@@ -32,7 +32,6 @@ namespace IPInfoService.Handler
             {
                 try
                 {
-                    string baseUrl = "http://localhost:2222";
                     GeoIP.GeoIPClient swclient = new GeoIP.GeoIPClient(baseUrl, client);
                     result = await swclient.WorkerAsync(ip);
                 }
