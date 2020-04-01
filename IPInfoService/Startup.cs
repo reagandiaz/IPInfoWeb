@@ -11,7 +11,6 @@ namespace IPInfoService
     public class Startup
     {
         public static OpenAPIs.openapiconfig OpenAPIConfig;
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

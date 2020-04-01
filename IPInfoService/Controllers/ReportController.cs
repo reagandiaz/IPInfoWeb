@@ -38,11 +38,16 @@ namespace IPInfoService.Controllers
             }
 
             var thandler = ActiveHandlers.Where(s => req.tasks.Contains(s.TaskName)).ToList();
-            var tasks = new List<Task>();
-            thandler.ForEach(s => { tasks.Add(Task.Run(() => s.TaskToRun(req.ip))); });
+            if (thandler.Count == 0)
+            {
+                report.message = "Error:no registered handlers ";
+                return report;
+            }
 
+            var tasks = new List<Task>(); 
             try
             {
+                thandler.ForEach(s => { tasks.Add(Task.Run(() => s.TaskToRun(req.ip))); });
                 Task.WaitAll(tasks.ToArray());
                 report.reports = new ReportItem[tasks.Count];
                 for (int i = 0; i < tasks.Count; i++)

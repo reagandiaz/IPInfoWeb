@@ -34,7 +34,6 @@ namespace GeoIPService.Controllers
             return result;
         }
 
-
         void LoadResult(Result result)
         {
             HttpWebResponse response = null;
@@ -78,6 +77,5 @@ namespace GeoIPService.Controllers
                 if (response != null) response.Close();
             }
         }
-
     }
 }

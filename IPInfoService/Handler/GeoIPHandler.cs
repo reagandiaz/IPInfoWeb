@@ -1,8 +1,8 @@
-﻿using IPInfoService.Models;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using IPInfoService.Models;
 
 namespace IPInfoService.Handler
 {
@@ -37,7 +37,7 @@ namespace IPInfoService.Handler
                 }
                 catch (Exception ex)
                 {
-                    result = new GeoIP.Result() { Ts = DateTime.Now, Info = $"{ex.Message}:{ex.Message}", State = "Error" };
+                    result = new GeoIP.Result() { Ts = DateTime.Now, Info = $"{ex.Message}:{ex.StackTrace}", State = "Error" };
                 }
             }
             return (object)result;
