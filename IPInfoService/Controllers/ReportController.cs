@@ -39,7 +39,7 @@ namespace IPInfoService.Controllers
 
             var thandler = ActiveHandlers.Where(s => req.tasks.Contains(s.TaskName)).ToList();
             var tasks = new List<Task>();
-            thandler.ForEach(s => { tasks.Add(s.TaskToRun(req.ip)); });
+            thandler.ForEach(s => { tasks.Add(Task.Run(() => s.TaskToRun(req.ip))); });
 
             try
             {
