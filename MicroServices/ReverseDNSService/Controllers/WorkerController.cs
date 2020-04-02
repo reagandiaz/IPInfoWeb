@@ -52,9 +52,17 @@ namespace ReverseDNSService.Controllers
             }
             catch (System.Exception ex)
             {
-                result.message = ex.Message;
-                result.info = ex.StackTrace;
-                result.state = "Error";
+                if (ex.Message.Contains("No such host is known"))
+                {
+                    result.message = "No such host is known";
+                    result.state = "Complete";
+                }
+                else
+                {
+                    result.message = ex.Message;
+                    result.info = ex.StackTrace;
+                    result.state = "Error";
+                }
             }
         }
     }

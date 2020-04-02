@@ -60,10 +60,9 @@ namespace PingService.Controllers
             }
             catch (Exception ex)
             {
-                result.state = "Error";
-                result.info = $"{ex.Message}:{ex.StackTrace}";
+                result.state = "Complete";
+                result.info = $"Ping request could not find host: {ex.Message}";
             }
         }
-
     }
 }
