@@ -41,20 +41,23 @@ namespace ReverseDNSService.Controllers
                 {
                     //an ip
                     result.message = Dns.GetHostEntry(result.ip).HostName;
+                    result.info = "Found";
                     result.state = "Complete";
                 }
                 else
                 {
                     //domain
                     result.message = Dns.GetHostAddresses(result.ip)[0].ToString();
+                    result.info = "Found";
                     result.state = "Complete";
                 }
             }
             catch (System.Exception ex)
             {
-                if (ex.Message.Contains("No such host is known"))
+                if (ex.Message.Contains("No such host is known") || ex.Message.Contains("Name or service not known"))
                 {
                     result.message = "No such host is known";
+                    result.info = "Name or service not known";
                     result.state = "Complete";
                 }
                 else

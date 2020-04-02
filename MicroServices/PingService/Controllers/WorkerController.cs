@@ -61,6 +61,7 @@ namespace PingService.Controllers
             catch (Exception ex)
             {
                 result.state = "Complete";
+                result.message = new Message();
                 result.info = $"Ping request could not find host: {ex.Message}";
             }
         }

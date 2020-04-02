@@ -55,17 +55,20 @@ namespace GeoIPService.Controllers
                 // Display the content.
                 result.message = JsonSerializer.Deserialize<Message>(responseFromServer);
                 result.state = "Complete";
+                result.info = "Found";
             }
             catch (Exception ex)
             {
                 if (ex.Message.Contains("The JSON value could not be converted to"))
                 {
                     result.info = responseFromServer.Contains("\"type\":null") ? "Not Found" : responseFromServer;
+                    result.message = new Message() { location = new Location() };
                     result.state = "Complete";
                 }
                 else
                 {
                     result.info = ex.Message;
+                    result.message = new Message() { location = new Location() };
                     result.state = "Error";
                 }
             }
