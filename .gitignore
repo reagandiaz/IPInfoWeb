@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/MicroServices/Dockerfile
+/.dockerignore
+/Dockerfile
